@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "sfwDViQ57H5ludKKxR9DJ5pddRphCxRYucZp5Tq44ArMloSS/MtjJjc6kqEeA60qVSe8CuFMjiW1RhGkSb4NFA==",
+  "success": true,
+  "projectFilePath": "D:\\Techpro\\File Explorer\\File Explorer\\File Explorer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hp\\.nuget\\packages\\metro4\\4.5.0\\metro4.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

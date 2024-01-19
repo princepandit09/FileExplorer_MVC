@@ -1,0 +1,32 @@
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\appsettings.Development.json
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\appsettings.json
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.staticwebassets.runtime.json
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.exe
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.deps.json
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.runtimeconfig.json
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.dll
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.pdb
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.csproj.AssemblyReference.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.AssemblyInfoInputs.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.AssemblyInfo.cs
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.csproj.CoreCompileInputs.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.MvcApplicationPartsAssemblyInfo.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.RazorAssemblyInfo.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.RazorAssemblyInfo.cs
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.File Explorer.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.build.File Explorer.props
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.File Explorer.props
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.File Explorer.props
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.build.json
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.development.json
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\bundle\File Explorer.styles.css
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\projectbundle\File Explorer.bundle.scp.css
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.dll
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\refint\File Explorer.dll
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.pdb
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.genruntimeconfig.cache
+D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\ref\File Explorer.dll
+D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\libman.json

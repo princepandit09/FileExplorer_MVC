@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Metro4/4.5.0": {
+        "type": "package"
+      }
+    }
+  },
+  "libraries": {
+    "Metro4/4.5.0": {
+      "sha512": "m6gLl9DUMjPPVeY1A2v2W3KPgXXUpCf5fQCxp1CvhlQ0rq2iXa9mCaOEoq0NnZFq3cnZpxH1EsezSiP/yblc2g==",
+      "type": "package",
+      "path": "metro4/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/metro-all.css",
+        "Content/Content/metro-all.min.css",
+        "Content/Content/metro-colors.css",
+        "Content/Content/metro-colors.min.css",
+        "Content/Content/metro-common.css",
+        "Content/Content/metro-common.min.css",
+        "Content/Content/metro-components.css",
+        "Content/Content/metro-components.min.css",
+        "Content/Content/metro-icons.css",
+        "Content/Content/metro-icons.min.css",
+        "Content/Content/metro-reset.css",
+        "Content/Content/metro-reset.min.css",
+        "Content/Content/metro.css",
+        "Content/Content/metro.min.css",
+        "Content/Scripts/metro.js",
+        "Content/Scripts/metro.min.js",
+        "Content/Scripts/metro.min.js.map",
+        "Content/mif/metro.json",
+        "Content/mif/metro.svg",
+        "Content/mif/metro.ttf",
+        "Content/mif/metro.woff",
+        "metro4.4.5.0.nupkg.sha512",
+        "metro4.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Metro4 >= 4.5.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Hp\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Techpro\\File Explorer\\File Explorer\\File Explorer.csproj",
+      "projectName": "File Explorer",
+      "projectPath": "D:\\Techpro\\File Explorer\\File Explorer\\File Explorer.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "D:\\Techpro\\File Explorer\\File Explorer\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "Metro4": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
