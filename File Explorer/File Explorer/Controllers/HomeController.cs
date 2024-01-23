@@ -1,5 +1,6 @@
 ﻿//using FileExplorer.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace FileExplorer.Controllers
@@ -77,6 +78,103 @@ namespace FileExplorer.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetInternalFilesByName(string path,string searchPattern)
+        {
+            try
+            {
+                Dictionary<string, List<Tuple<string, string>>> FilesInfo = new Dictionary<string, List<Tuple<string, string>>>();
+
+                string[] files = Directory.GetFiles(path); ;
+                List<Tuple<string, string>> tuplelst = new List<Tuple<string, string>>();
+
+                foreach (string file in files)
+                {
+                    string filename= Path.GetFileName(file);
+                    if(filename.ToLower().Contains(searchPattern.ToLower()))
+                    {
+
+                    tuplelst.Add(new Tuple<string, string>(Path.GetExtension(file), file));
+
+                    }
+           
+
+                }
+                FilesInfo[path] = new List<Tuple<string, string>>(tuplelst);
+                return Json(FilesInfo);
+            }
+            catch (Exception)
+            {
+                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
+
+                driveInfo[path] = new List<Tuple<int, string>>();
+                return Json(driveInfo);
+            }
+        }
+        public IActionResult GetInternalFiles(string path)
+        {
+            try
+            {
+
+             Dictionary<string,List<Tuple<string, string>>> FilesInfo =new Dictionary<string, List<Tuple<string, string>>>();
+
+            string[] files = Directory.GetFiles(path);
+            List<Tuple<string, string>> tuplelst = new List<Tuple<string, string>>();
+                
+            foreach (string file in files)
+            {
+
+
+                tuplelst.Add(new Tuple<string, string>(Path.GetExtension(file), file));
+
+            }
+            FilesInfo[path] = new List<Tuple<string, string>>(tuplelst);
+            return Json(FilesInfo);
+
+            }
+            catch (Exception)
+            {
+                Dictionary<string, List<Tuple<string, string>>> driveInfo = new Dictionary<string, List<Tuple<string, string>>>();
+
+                driveInfo[path] = new List<Tuple<string, string>>();
+                return Json(driveInfo);
+            }
+        }
+                
+        [HttpGet]
+        public IActionResult GetTnternalDirectoriesByName(string path,string searchPattern)
+        {
+            try
+            {
+                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
+
+                string[] directories =Directory.GetDirectories(path);
+                List<Tuple<int, string>> tuplelst = new List<Tuple<int, string>>();
+
+
+                foreach (string directory in directories)
+                {
+                    string[] subdirectories = GetDirectories(directory);
+                    string directoryName = Path.GetFileName(directory);
+
+                    if (directoryName.ToLower().Contains(searchPattern.ToLower()))
+                    {
+                        tuplelst.Add(new Tuple<int, string>(subdirectories.Length, directory));
+                    }
+
+                }
+
+                driveInfo[path] = new List<Tuple<int, string>>(tuplelst);
+
+                return Json(driveInfo);
+            }
+            catch (Exception)
+            {
+                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
+
+                driveInfo[path] = new List<Tuple<int, string>>();
+                return Json(driveInfo);
+            }
+        }
         public IActionResult GetInternalDriveAndDirectories(string path)
         {
             Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
@@ -94,14 +192,7 @@ namespace FileExplorer.Controllers
             }
 
             driveInfo[path] = new List<Tuple<int, string>>(tuplelst);
-
-
-
-
             return Json(driveInfo);
         }
-
-
-
     }
 }
