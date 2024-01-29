@@ -1,0 +1,82 @@
+﻿
+.zip, .audio, .c-sharp, .default, .docx,
+.drive, .exe, .image, .mp4, .pdf,
+.sql, .text {
+    display: inline-block;
+    background: url('../Images/sprite.png') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+}
+
+.zip {
+    background-position: -0px -0px;
+    width: 74px;
+    height: 74px;
+}
+
+.audio {
+    background-position: -74px -0px;
+    width: 74px;
+    height: 74px;
+}
+
+.c-sharp {
+    background-position: -148px -0px;
+    width: 74px;
+    height: 74px;
+}
+
+.default {
+    background-position: -0px -74px;
+    width: 74px;
+    height: 74px;
+}
+
+.docx {
+    background-position: -74px -74px;
+    width: 74px;
+    height: 60px;
+}
+
+.drive {
+    background-position: -148px -74px;
+    width: 74px;
+    height: 74px;
+}
+
+.exe {
+    background-position: -74px -134px;
+    width: 74px;
+    height: 74px;
+}
+
+.image {
+    background-position: -0px -148px;
+    width: 74px;
+    height: 74px;
+}
+
+.mp4 {
+    background-position: -148px -148px;
+    width: 74px;
+    height: 74px;
+}
+
+.pdf {
+    background-position: -74px -208px;
+    width: 74px;
+    height: 74px;
+}
+
+.sql {
+    background-position: -0px -222px;
+    width: 74px;
+    height: 74px;
+}
+
+.text {
+    background-position: -148px -222px;
+    width: 74px;
+    height: 74px;
+}

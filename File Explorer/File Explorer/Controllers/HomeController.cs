@@ -1,198 +1,237 @@
 ﻿//using FileExplorer.Models;
+using BusinessAccessLayer.Intrefaces;
+using File_Explorer.Controllers;
+using File_Explorer.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace FileExplorer.Controllers
 {
-    public class HomeController : Controller
+
+    //ToDo: Implement bundling and minification
+    // If using images use image sprites
+    // Log to text files
+    //ToDo: Implement filters to manage exception globally
+    //Never inherit or use framework class/object directly. Always create an abstract base class inherting from controller class and then inherit from that base class
+    //This is called Basecontroller pattern
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MyResponse myResponse= new MyResponse();
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICrud crud, IDriveInfo driveInfo, IFileService fileService): base(crud, driveInfo, fileService)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            //throw new Exception("my Exception for fun");
+            _logger.LogInformation("Home Index Called");
             return View();
         }
 
-
-        [HttpGet]
         public IActionResult GetInitialDriveAndDirectories()
         {
-            //Dictionary<string, Tuple<int, string[]>> driveInfo = GetDriveAndDirectories();
-            //Dictionary<string, List <string>> driveInfo = GetDriveAndDirectories();
-            Dictionary<string, List<Tuple<int, string>>> driveInfo = GetDriveAndDirectories();
+            var driveInfo = _driveInfoServices.GetDriveAndDirectories();
             return Json(driveInfo);
         }
-
-        private Dictionary<string, List<Tuple<int, string>>> GetDriveAndDirectories()
-        {
-            // Dictionary<string, List<string>> driveInfo = new Dictionary<string, List<string>>();
-            Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
-
-
-            DriveInfo[] allDrives = DriveInfo.GetDrives();
-
-            foreach (DriveInfo drive in allDrives)
-            {
-                if (drive.IsReady)
-                {
-                    string driveLetter = drive.Name;
-                    string[] directories = GetDirectories(driveLetter);
-
-                    List<Tuple<int, string>> tuplelst = new List<Tuple<int, string>>();
-
-                    foreach (string directory in directories)
-                    {
-                        string[] subdirectories = GetDirectories(directory);
-                            
-                        tuplelst.Add(new Tuple<int, string>(subdirectories.Length, directory));
-
-                    }
-
-                    driveInfo[driveLetter] = new List<Tuple<int, string>>(tuplelst);
-
-
-                    //driveInfo[driveLetter] = new List<string>(directories);
-                }
-            }
-
-            return driveInfo;
-        }
-
-        private string[] GetDirectories(string driveLetter)
+        public IActionResult GetTnternalDirectoriesByName(string path,string searchPattern)
         {
             try
             {
-                return Directory.GetDirectories(driveLetter);
+                var result = _driveInfoServices.GetTnternalDirectoriesByName(path, searchPattern);
+                if (String.IsNullOrEmpty(result.Item1))
+                {
+                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                else
+                {
+                    myResponse.Message = result.Item1;
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                return Json(myResponse);
             }
-
-            catch
+            catch (Exception ex)
             {
-                return new string[0];
+                myResponse.Message = ex.Message;
+                myResponse.Ok = false;
+                myResponse.Data = null;
+                return Json(myResponse);
             }
         }
-
-        [HttpGet]
-        public IActionResult GetInternalFilesByName(string path,string searchPattern)
+        public IActionResult GetInternalDriveAndDirectories(string path)
         {
             try
             {
-                Dictionary<string, List<Tuple<string, string>>> FilesInfo = new Dictionary<string, List<Tuple<string, string>>>();
-
-                string[] files = Directory.GetFiles(path); ;
-                List<Tuple<string, string>> tuplelst = new List<Tuple<string, string>>();
-
-                foreach (string file in files)
+                var result = _driveInfoServices.GetInternalDriveAndDirectoriesByPath(path);
+                if (String.IsNullOrEmpty(result.Item1))
                 {
-                    string filename= Path.GetFileName(file);
-                    if(filename.ToLower().Contains(searchPattern.ToLower()))
-                    {
-
-                    tuplelst.Add(new Tuple<string, string>(Path.GetExtension(file), file));
-
-                    }
-           
-
+                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
                 }
-                FilesInfo[path] = new List<Tuple<string, string>>(tuplelst);
-                return Json(FilesInfo);
+                else
+                {
+                    myResponse.Message = result.Item1;
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
-
-                driveInfo[path] = new List<Tuple<int, string>>();
-                return Json(driveInfo);
+                myResponse.Message = ex.Message;
+                myResponse.Ok = false;
+                myResponse.Data = null;
+                
             }
+            return Json(myResponse);
         }
         public IActionResult GetInternalFiles(string path)
         {
             try
             {
-
-             Dictionary<string,List<Tuple<string, string>>> FilesInfo =new Dictionary<string, List<Tuple<string, string>>>();
-
-            string[] files = Directory.GetFiles(path);
-            List<Tuple<string, string>> tuplelst = new List<Tuple<string, string>>();
-                
-            foreach (string file in files)
-            {
-
-
-                tuplelst.Add(new Tuple<string, string>(Path.GetExtension(file), file));
-
+                var result = _fileService.GetInternalFiles(path);
+                if (String.IsNullOrEmpty(result.Item1))
+                {
+                    myResponse.Message = "Files getting Successfully!";
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                else
+                {
+                    myResponse.Message = result.Item1;
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                return Json(myResponse);
             }
-            FilesInfo[path] = new List<Tuple<string, string>>(tuplelst);
-            return Json(FilesInfo);
-
-            }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Dictionary<string, List<Tuple<string, string>>> driveInfo = new Dictionary<string, List<Tuple<string, string>>>();
-
-                driveInfo[path] = new List<Tuple<string, string>>();
-                return Json(driveInfo);
+                myResponse.Message = ex.Message;
+                myResponse.Ok = false;
+                myResponse.Data = null;
+                return Json(myResponse);
             }
         }
-                
-        [HttpGet]
-        public IActionResult GetTnternalDirectoriesByName(string path,string searchPattern)
+        public IActionResult GetInternalFilesByName(string path, string searchPattern)
         {
             try
             {
-                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
-
-                string[] directories =Directory.GetDirectories(path);
-                List<Tuple<int, string>> tuplelst = new List<Tuple<int, string>>();
-
-
-                foreach (string directory in directories)
+                var result = _fileService.GetInternalFiles(path);
+                if (String.IsNullOrEmpty(result.Item1))
                 {
-                    string[] subdirectories = GetDirectories(directory);
-                    string directoryName = Path.GetFileName(directory);
-
-                    if (directoryName.ToLower().Contains(searchPattern.ToLower()))
-                    {
-                        tuplelst.Add(new Tuple<int, string>(subdirectories.Length, directory));
-                    }
-
+                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
                 }
-
-                driveInfo[path] = new List<Tuple<int, string>>(tuplelst);
-
-                return Json(driveInfo);
+                else
+                {
+                    myResponse.Message = result.Item1;
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                return Json(myResponse);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
-
-                driveInfo[path] = new List<Tuple<int, string>>();
-                return Json(driveInfo);
+                myResponse.Message = ex.Message;
+                myResponse.Ok = false;
+                myResponse.Data = null;
+                return Json(myResponse);
             }
+
         }
-        public IActionResult GetInternalDriveAndDirectories(string path)
+        public IActionResult GetFileContent(string path)
         {
-            Dictionary<string, List<Tuple<int, string>>> driveInfo = new Dictionary<string, List<Tuple<int, string>>>();
-
-            string[] directories = GetDirectories(path);
-            List<Tuple<int, string>> tuplelst = new List<Tuple<int, string>>();
-
-
-            foreach (string directory in directories)
+            try
             {
-                string[] subdirectories = GetDirectories(directory);
-
-                tuplelst.Add(new Tuple<int, string>(subdirectories.Length, directory));
+                var result = _fileService.GetFileContent(path);
+                if (String.IsNullOrEmpty(result.Item1))
+                {
+                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                else
+                {
+                    myResponse.Message = result.Item1;
+                    myResponse.Ok = true;
+                    myResponse.Data = result.Item2;
+                }
+                return Json(myResponse);
+            }
+            catch (Exception ex)
+            {
+                myResponse.Message = ex.Message;
+                myResponse.Ok = false;
+                myResponse.Data = null;
+                return Json(myResponse);
+            }
+        }
+        public IActionResult SaveData(string newPath, string oldPath, bool isDelete)
+        {
+            try
+            {
+                string result = _crudService.SaveData(newPath, oldPath, isDelete);
+                if (String.IsNullOrEmpty(result))
+                {
+                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Ok = true;
+                }
+                else if (result == "NotDefine")
+                {
+                    myResponse.Message = "Undefined file Type";
+                    myResponse.Ok = true;
+                }
+                else
+                {
+                    myResponse.Message = result;
+                }
+                return Json(myResponse);
 
             }
-
-            driveInfo[path] = new List<Tuple<int, string>>(tuplelst);
-            return Json(driveInfo);
+            catch (Exception ex)
+            {
+                myResponse.Ok = false;
+                myResponse.Message = ex.Message;
+                return Json(myResponse);
+            }
         }
+        public IActionResult DeleteData(string oldPath)
+        {
+            try
+            {
+                string result = _crudService.DeleteData(oldPath);
+                if (String.IsNullOrEmpty(result))
+                {
+                    myResponse.Message = "Directory deleted successfully!";
+                    myResponse.Ok = true;
+                }
+                else
+                {
+                    myResponse.Message = "Something went Wrong";
+                    myResponse.Ok = true;
+                }
+                return Json(myResponse);
+            }
+            catch (Exception ex)
+            {
+                myResponse.Ok = false;
+                myResponse.Message = ex.Message;
+                return Json(myResponse);
+            }
+        }
+
+        // Method names should be pascal cased and not camelcased
+        // Violation of SRP (Single responsibility principle) .Move this to file service class which will implement
+        //IFileService interface. Then inject IfileService as a dependency into controller
+        //variable name should be camel case and method/property/class name should be pascal
+
+        //ToDo: Prepare application for multilingual support. Move all messages to resource files
+
     }
 }

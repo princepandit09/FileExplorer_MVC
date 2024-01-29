@@ -1,0 +1,18 @@
+[
+  {
+    "outputFileName": "wwwroot/js/Bundle.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js",
+      "wwwroot/js/Directory.js",
+      "wwwroot/js/File.js",
+      "wwwroot/js/Bind.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Bundle.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css",
+      "wwwroot/css/Sprite.css"
+    ]
+  },
+]

@@ -12,43 +12,58 @@
         <i id="refreshBtn" class="fa fa-refresh"></i>
         <input id="searchBar" type="text" placeholder="search"/>
     </div>
-    <div class="SideBar" id="sidebar">
+    <div>
+        <div class="SideBar" id="sidebar">
 
-        <ul id="treemain" data-role="treeview">
-            <li data-icon="<span class='mif-star-full'></span>" data-caption="Favorites">
-                <ul>
-                    <li data-icon="<span class='mif-library'></span>" data-caption="Projects"></li>
-                    <li data-icon="<span class='mif-download'></span>" data-caption="Downloads"></li>
-                    <li data-icon="<img src='images/desktop.png'>" data-caption="Desktop"></li>
-                </ul>
-            </li>
-            <li data-icon="<span class='mif-onedrive'></span>" data-caption="OneDrive">
-                <ul>
-                    <li data-caption="Documents"></li>
-                    <li data-caption="Projects" data-collapsed="true">
-                        <ul>
-                            <li data-caption="Web"></li>
-                            <li data-caption="Android"></li>
-                            <li data-caption="Windows"></li>
-                            <li data-caption="iOS"></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="ContentPanel" id="ContentPanel">
-        <ul id="listview" data-role="listview" data-view="icons-medium">
-@*            <li data-caption="Devices and disks">
-                <ul>
-                    <li data-icon="images/drive1.png" data-caption="System (C:)"></li>
-                    <li data-icon="images/drive1.png" data-caption="DS1 (D:)"></li>
-                    <li data-icon="images/drive1.png" data-caption="DS2 (E:)"></li>
-                    <li data-icon="images/drive1.png" data-caption="FreeAgent (G:)"></li>
-                    <li data-icon="images/disk-network.png" data-caption="Network"></li>
-                </ul>
-            </li>
-*@            
-        </ul>
+            <ul id="treemain" data-role="treeview">
+                <li data-icon="<span class='mif-star-full'></span>" data-caption="Favorites">
+                    <ul>
+                        <li data-icon="<span class='mif-library'></span>" data-caption="Projects"></li>
+                        <li data-icon="<span class='mif-download'></span>" data-caption="Downloads"></li>
+                        <li data-icon="<img src='images/desktop.png'>" data-caption="Desktop"></li>
+                    </ul>
+                </li>
+                <li data-icon="<span class='mif-onedrive'></span>" data-caption="OneDrive">
+                    <ul>
+                        <li data-caption="Documents"></li>
+                        <li data-caption="Projects" data-collapsed="true">
+                            <ul>
+                                <li data-caption="Web"></li>
+                                <li data-caption="Android"></li>
+                                <li data-caption="Windows"></li>
+                                <li data-caption="iOS"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="ContentPanel" id="ContentPanel">
+            <ul id="listview" data-role="listview" data-view="icons-medium">
+    @*            <li data-caption="Devices and disks">
+                    <ul>
+                        <li data-icon="images/drive1.png" data-caption="System (C:)"></li>
+                        <li data-icon="images/drive1.png" data-caption="DS1 (D:)"></li>
+                        <li data-icon="images/drive1.png" data-caption="DS2 (E:)"></li>
+                        <li data-icon="images/drive1.png" data-caption="FreeAgent (G:)"></li>
+                        <li data-icon="images/disk-network.png" data-caption="Network"></li>
+                    </ul>
+                </li>
+    *@            
+            </ul>
+        </div>
+        <div class="modal fade" id="PopupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                            <option id="copy">Copy</option>
+                            <option id="cut">Cut</option>
+                            <option id="paste">Paste</option>
+                            <option id="delete">Delete</option>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

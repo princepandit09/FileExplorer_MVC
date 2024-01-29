@@ -66,3 +66,20 @@ body {
     flex-grow: 1; /* Take up remaining space in the flex container */
 }
 
+#PopupModal ul li:hover {
+    background: wheat;
+    cursor: pointer;
+    list-style: none;
+}
+#PopupModal option:hover {
+    background: wheat;
+    cursor: pointer;
+    list-style: none;
+}
+#PopupModal ul li {
+    margin-top: 0;
+    list-style: none
+}
+#PopupModal {
+    padding: 0; /* Remove any padding */
+}
