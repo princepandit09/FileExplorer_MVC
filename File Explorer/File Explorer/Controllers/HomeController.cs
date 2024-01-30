@@ -25,9 +25,15 @@ namespace FileExplorer.Controllers
 
         public IActionResult Index()
         {
-            //throw new Exception("my Exception for fun");
+            throw new Exception("my Exception for fun");
             _logger.LogInformation("Home Index Called");
             return View();
+        } 
+        public IActionResult Error()
+        {
+            var errorViewModel = TempData["ErrorViewModel"] as ErrorViewModel;
+
+            return View(errorViewModel);
         }
 
         public IActionResult GetInitialDriveAndDirectories()

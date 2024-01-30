@@ -15,23 +15,25 @@ builder.Services.AddTransient<IFileService, FileService>();
 builder.Services.AddTransient<ICrud, CrudService>();
 
 //Handle Global Exception using Filters 
-//builder.Services.AddControllers(options =>
-//{
-//    options.Filters.Add(typeof(MyExceptionFilter));
-//});
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(typeof(MyExceptionFilter));
+});
 
-  //log using middleware
+//log using Serilog work for both middleware and filters
 builder.Host.UseSerilog((hostingContext, loggerconfig) =>
 {
-    loggerconfig.ReadFrom.Configuration(hostingContext.Configuration);  
+    loggerconfig.ReadFrom.Configuration(hostingContext.Configuration);
 });
 
 var app = builder.Build();
 
-app.UseMiddleware<GlobalExceptionHandler>();
+//Handle Global Exception using middleware 
+//app.UseMiddleware<GlobalExceptionHandler>();
 
 app.UseHttpsRedirection();
 
+//configure Serilog in middleware Pipeline
 app.UseSerilogRequestLogging();
 
 app.UseStaticFiles();

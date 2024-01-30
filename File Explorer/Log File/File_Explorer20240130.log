@@ -1,0 +1,54 @@
+2024-01-30 13:25:15.982 +05:30 INFUser profile is available. Using 'C:\Users\Hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-30 13:25:16.190 +05:30 INFApplication started. Press Ctrl+C to shut down.
+2024-01-30 13:25:16.192 +05:30 INFHosting environment: Development
+2024-01-30 13:25:16.192 +05:30 INFContent root path: D:\Techpro\Git FileExplorer\File Explorer\File Explorer\
+2024-01-30 13:25:16.242 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/ - -
+2024-01-30 13:25:16.357 +05:30 INFExecuting endpoint 'FileExplorer.Controllers.HomeController.Index (File Explorer)'
+2024-01-30 13:25:16.426 +05:30 INFRoute matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FileExplorer.Controllers.HomeController (File Explorer).
+2024-01-30 13:25:19.489 +05:30 ERRmy Exception for funSystem.Exception: my Exception for fun
+   at FileExplorer.Controllers.HomeController.Index() in D:\Techpro\Git FileExplorer\File Explorer\File Explorer\Controllers\HomeController.cs:line 28
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+
+2024-01-30 13:25:19.589 +05:30 INFExecuting RedirectResult, redirecting to /Home/Error.
+2024-01-30 13:25:19.599 +05:30 INFExecuted action FileExplorer.Controllers.HomeController.Index (File Explorer) in 3138.0473ms
+2024-01-30 13:25:19.611 +05:30 INFExecuted endpoint 'FileExplorer.Controllers.HomeController.Index (File Explorer)'
+2024-01-30 13:25:19.615 +05:30 INFHTTP GET / responded 302 in 3286.1689 ms
+2024-01-30 13:25:19.657 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/Home/Error - -
+2024-01-30 13:25:19.662 +05:30 INFExecuting endpoint 'FileExplorer.Controllers.HomeController.Error (File Explorer)'
+2024-01-30 13:25:19.666 +05:30 INFRoute matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller FileExplorer.Controllers.HomeController (File Explorer).
+2024-01-30 13:25:19.666 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/ - - - 302 - - 3434.8193ms
+2024-01-30 13:25:19.700 +05:30 INFExecuting ViewResult, running view Error.
+2024-01-30 13:25:20.071 +05:30 INFExecuted ViewResult - view Error executed in 386.2474ms.
+2024-01-30 13:25:20.086 +05:30 INFExecuted action FileExplorer.Controllers.HomeController.Error (File Explorer) in 420.414ms
+2024-01-30 13:25:20.087 +05:30 INFExecuted endpoint 'FileExplorer.Controllers.HomeController.Error (File Explorer)'
+2024-01-30 13:25:20.089 +05:30 INFHTTP GET /Home/Error responded 200 in 431.7739 ms
+2024-01-30 13:25:20.143 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/Home/Error - - - 200 - text/html;+charset=utf-8 485.8842ms
+2024-01-30 13:25:20.150 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - -
+2024-01-30 13:25:20.150 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/File_Explorer.styles.css - -
+2024-01-30 13:25:20.152 +05:30 INFHTTP GET /File_Explorer.styles.css responded 404 in 0.9315 ms
+2024-01-30 13:25:20.158 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/File_Explorer.styles.css - - - 404 - - 7.4104ms
+2024-01-30 13:25:20.192 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 29.8096ms
+2024-01-30 13:25:20.222 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/_vs/browserLink - -
+2024-01-30 13:25:20.425 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 202.6103ms
+2024-01-30 13:25:20.426 +05:30 INFRequest starting HTTP/2 GET https://localhost:44390/Home/GetInitialDriveAndDirectories [object+JSON] -
+2024-01-30 13:25:20.435 +05:30 INFExecuting endpoint 'FileExplorer.Controllers.HomeController.GetInitialDriveAndDirectories (File Explorer)'
+2024-01-30 13:25:20.438 +05:30 INFRoute matched with {action = "GetInitialDriveAndDirectories", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetInitialDriveAndDirectories() on controller FileExplorer.Controllers.HomeController (File Explorer).
+2024-01-30 13:25:20.545 +05:30 INFRequest starting HTTP/1.1 GET https://localhost:44390/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - -
+2024-01-30 13:25:21.038 +05:30 INFExecuting JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-30 13:25:21.082 +05:30 INFSending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'D:\Techpro\Git FileExplorer\File Explorer\File Explorer\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2024-01-30 13:25:21.101 +05:30 INFHTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js.map responded 200 in 556.2932 ms
+2024-01-30 13:25:21.127 +05:30 INFRequest finished HTTP/1.1 GET https://localhost:44390/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - - - 200 327261 text/plain 582.1828ms
+2024-01-30 13:25:21.148 +05:30 INFExecuted action FileExplorer.Controllers.HomeController.GetInitialDriveAndDirectories (File Explorer) in 709.6853ms
+2024-01-30 13:25:21.148 +05:30 INFExecuted endpoint 'FileExplorer.Controllers.HomeController.GetInitialDriveAndDirectories (File Explorer)'
+2024-01-30 13:25:21.148 +05:30 INFHTTP GET /Home/GetInitialDriveAndDirectories responded 200 in 721.8568 ms
+2024-01-30 13:25:21.148 +05:30 INFRequest finished HTTP/2 GET https://localhost:44390/Home/GetInitialDriveAndDirectories [object+JSON] - - 200 - application/json;+charset=utf-8 722.2017ms
