@@ -20,6 +20,7 @@ function getDirectories(path, callback) {
         contentType: JSON,
         data: { "path": path },
         "success": function (response) {
+            console.log(response)
             // console.log(response.data)
             callback(response.data);
         },

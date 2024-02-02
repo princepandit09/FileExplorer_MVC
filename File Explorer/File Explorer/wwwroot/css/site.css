@@ -83,3 +83,54 @@ body {
 #PopupModal {
     padding: 0; /* Remove any padding */
 }
+
+.mainNavBar {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background-color:cornflowerblue;
+}
+
+.file-options {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    background-color:lightgrey;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin: 30px 20px;
+}
+   /* .file-options:hover {
+        background-color: grey;
+    }*/
+
+    .file-options ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .file-options li {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+        .file-options li:hover {
+            background-color: grey;
+        }
+
+        .file-options li:last-child {
+            border-bottom: none;
+        }

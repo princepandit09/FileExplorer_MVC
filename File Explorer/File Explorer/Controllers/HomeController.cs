@@ -2,7 +2,11 @@
 using BusinessAccessLayer.Intrefaces;
 using File_Explorer.Controllers;
 using File_Explorer.Models;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Localization;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Globalization;
 
 namespace FileExplorer.Controllers
 {
@@ -16,24 +20,32 @@ namespace FileExplorer.Controllers
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IViewLocalizer _localizer;
         private readonly MyResponse myResponse= new MyResponse();
 
-        public HomeController(ILogger<HomeController> logger, ICrud crud, IDriveInfo driveInfo, IFileService fileService): base(crud, driveInfo, fileService)
+        private Ilanguage Language;
+        private readonly ActionContext _actionContext = new ActionContext();
+
+        public HomeController(ILogger<HomeController> logger,Ilanguage language, IViewLocalizer localizer, ICrud crud, IDriveInfo driveInfo, IFileService fileService): base(crud, driveInfo, fileService)
         {
             _logger = logger;
+            Language = language;
+            _localizer = localizer;
         }
 
         public IActionResult Index()
         {
-            throw new Exception("my Exception for fun");
-            _logger.LogInformation("Home Index Called");
+            //throw new Exception("my Exception for fun");
+            _logger.LogInformation(Language.GetKey("Home Index Called").Value);
+            //var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+            var currentCulture = CultureInfo.CurrentCulture.Name;
+
             return View();
         } 
         public IActionResult Error()
         {
-            var errorViewModel = TempData["ErrorViewModel"] as ErrorViewModel;
-
-            return View(errorViewModel);
+            ViewData["message"] = Language.GetKey("An unexpected error occurred. Please try again later after some time :)").Value;
+            return View();
         }
 
         public IActionResult GetInitialDriveAndDirectories()
@@ -48,7 +60,7 @@ namespace FileExplorer.Controllers
                 var result = _driveInfoServices.GetTnternalDirectoriesByName(path, searchPattern);
                 if (String.IsNullOrEmpty(result.Item1))
                 {
-                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Message = Language.GetKey("Task Executed Successfully!").Value;
                     myResponse.Ok = true;
                     myResponse.Data = result.Item2;
                 }
@@ -75,7 +87,7 @@ namespace FileExplorer.Controllers
                 var result = _driveInfoServices.GetInternalDriveAndDirectoriesByPath(path);
                 if (String.IsNullOrEmpty(result.Item1))
                 {
-                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Message = Language.GetKey("Task Executed Successfully!").Value;
                     myResponse.Ok = true;
                     myResponse.Data = result.Item2;
                 }
@@ -103,7 +115,7 @@ namespace FileExplorer.Controllers
                 var result = _fileService.GetInternalFiles(path);
                 if (String.IsNullOrEmpty(result.Item1))
                 {
-                    myResponse.Message = "Files getting Successfully!";
+                    myResponse.Message =Language.GetKey("Files getting Successfully!").Value;
                     myResponse.Ok = true;
                     myResponse.Data = result.Item2;
                 }
@@ -130,7 +142,7 @@ namespace FileExplorer.Controllers
                 var result = _fileService.GetInternalFiles(path);
                 if (String.IsNullOrEmpty(result.Item1))
                 {
-                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Message =Language.GetKey("Task Executed Successfully!").Value;
                     myResponse.Ok = true;
                     myResponse.Data = result.Item2;
                 }
@@ -158,7 +170,7 @@ namespace FileExplorer.Controllers
                 var result = _fileService.GetFileContent(path);
                 if (String.IsNullOrEmpty(result.Item1))
                 {
-                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Message =Language.GetKey("Task Executed Successfully!").Value;
                     myResponse.Ok = true;
                     myResponse.Data = result.Item2;
                 }
@@ -185,12 +197,12 @@ namespace FileExplorer.Controllers
                 string result = _crudService.SaveData(newPath, oldPath, isDelete);
                 if (String.IsNullOrEmpty(result))
                 {
-                    myResponse.Message = "Task Executed Successfully!";
+                    myResponse.Message =Language.GetKey("Task Executed Successfully!").Value;
                     myResponse.Ok = true;
                 }
                 else if (result == "NotDefine")
                 {
-                    myResponse.Message = "Undefined file Type";
+                    myResponse.Message =Language.GetKey("Undefined file Type").Value;
                     myResponse.Ok = true;
                 }
                 else
@@ -214,7 +226,7 @@ namespace FileExplorer.Controllers
                 string result = _crudService.DeleteData(oldPath);
                 if (String.IsNullOrEmpty(result))
                 {
-                    myResponse.Message = "Directory deleted successfully!";
+                    myResponse.Message =Language.GetKey("Directory deleted successfully!").Value;
                     myResponse.Ok = true;
                 }
                 else
@@ -232,12 +244,21 @@ namespace FileExplorer.Controllers
             }
         }
 
-        // Method names should be pascal cased and not camelcased
-        // Violation of SRP (Single responsibility principle) .Move this to file service class which will implement
-        //IFileService interface. Then inject IfileService as a dependency into controller
-        //variable name should be camel case and method/property/class name should be pascal
+        [HttpPost]
+        public IActionResult ChangeLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions() { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+            //return Redirect(Request.Headers["Referer"].ToString());
+            //Response.Cookies.Append("culture", culture);
+
+            return RedirectToAction("Index");
+        }
 
         //ToDo: Prepare application for multilingual support. Move all messages to resource files
+
+        
 
     }
 }

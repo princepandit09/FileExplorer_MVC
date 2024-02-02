@@ -5,6 +5,7 @@ var newPath;
 var isDelete;
 $(document).ready(function () {
     getDrives(function (response) {
+       // $("#treemain").empty();
         BindInitialTreeView(response);
         InitialContentData(response)
     })
@@ -75,6 +76,37 @@ $(document).ready(function () {
             })
         }
 
+    })
+
+    $("#ddlLanguage").change(function () {
+        var data = {
+            "culture": $("#ddlLanguage").val(),
+            "returnUrl": "Index"
+        }
+        $.post("Home/ChangeLanguage", data, function (response) {
+            getDrives(function (response) {
+                window.location.reload()
+                //$("#treemain").empty();
+               // BindInitialTreeView(response);
+                InitialContentData(response)
+            })
+        })
+    })
+
+    $(".file-btn").click(function () {
+        $(".file-options").toggle();
+    });
+
+    $("#Close").click(function () {
+        window.top.close();
+    })
+    $("#newTab").click(function () {
+        var url = "https://localhost:44390/";
+        window.open(url, '_blank');
+    })
+    $("#help").click(function () {
+        var url = "https://support.microsoft.com/en-us/windows/help-in-file-explorer-a2d33543-5242-788d-8994-b0be10ae5bca";
+        window.open(url, '_blank');
     })
 
     // handle Pop of Cut Copy Paste

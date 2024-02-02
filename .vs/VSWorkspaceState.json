@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\File Explorer",
+    "\\File Explorer\\File Explorer",
+    "\\File Explorer\\File Explorer\\Views\\Shared",
+    "\\File Explorer\\File Explorer\\wwwroot\\css",
+    "\\File Explorer\\File Explorer\\wwwroot\\images",
+    "\\File Explorer\\File Explorer\\wwwroot\\js"
   ],
-  "SelectedNode": "\\D:\\Techpro\\Git FileExplorer",
+  "SelectedNode": "\\File Explorer\\File Explorer\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

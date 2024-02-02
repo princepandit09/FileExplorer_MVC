@@ -1,32 +1,51 @@
-﻿@{
+﻿@*@inject  Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+*@
+@using BusinessAccessLayer.Intrefaces;
+@inject Ilanguage localizer
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <link rel="stylesheet" href="https://cdn.metroui.org.ua/dev/metro.css">
 <script src="https://cdn.metroui.org.ua/dev/metro.js"></script>
 
 <div class="main">
+    <div class="mainNavBar">
+        <button class="btn file-btn">@localizer.GetKey("File")</button>
+        <button class="btn">@localizer.GetKey("Home")</button>
+        <button class="btn">@localizer.GetKey("Share")</button>
+        <button class="btn">@localizer.GetKey("View")</button>
+        <div class="file-options">
+            <ul>
+                <li id="newTab">@localizer.GetKey("Open new tab")</li>
+                <li id="Close">@localizer.GetKey("Close")</li>
+                <li id="help">@localizer.GetKey("Help")</li>
+                <!-- Add more options as needed -->
+            </ul>
+        </div>
+    </div>
+
     <div class="navBar">
         <i id="backBtn" class="fa fa-arrow-left"></i>
         <i id="nextBtn" class="fa fa-arrow-right"></i>
         <input id="navPathfld" type="text" />
         <i id="refreshBtn" class="fa fa-refresh"></i>
-        <input id="searchBar" type="text" placeholder="search"/>
+        <input id="searchBar" type="text" placeholder="@localizer.GetKey("search")"/>
     </div>
     <div>
         <div class="SideBar" id="sidebar">
-
             <ul id="treemain" data-role="treeview">
-                <li data-icon="<span class='mif-star-full'></span>" data-caption="Favorites">
+                <li data-icon="<span class='mif-star-full'></span>" data-caption="@localizer.GetKey("Favorites")">
                     <ul>
-                        <li data-icon="<span class='mif-library'></span>" data-caption="Projects"></li>
-                        <li data-icon="<span class='mif-download'></span>" data-caption="Downloads"></li>
-                        <li data-icon="<img src='images/desktop.png'>" data-caption="Desktop"></li>
+                        <li data-icon="<span class='mif-library'></span>" data-caption="@localizer.GetKey("Projects")"></li>
+                        <li data-icon="<span class='mif-download'></span>" data-caption="@localizer.GetKey("Downloads")"></li>
+                            <li data-icon="<img src='images/desktop.png'>" data-caption="@localizer.GetKey("Desktop")"></li>
                     </ul>
                 </li>
-                <li data-icon="<span class='mif-onedrive'></span>" data-caption="OneDrive">
+                <li data-icon="<span class='mif-onedrive'></span>" data-caption="@localizer.GetKey("OneDrive")">
                     <ul>
-                        <li data-caption="Documents"></li>
-                        <li data-caption="Projects" data-collapsed="true">
+                        <li data-caption="@localizer.GetKey("Documents")"></li>
+                        <li data-caption="@localizer.GetKey("Projects")" data-collapsed="true">
                             <ul>
                                 <li data-caption="Web"></li>
                                 <li data-caption="Android"></li>
@@ -39,29 +58,19 @@
             </ul>
         </div>
         <div class="ContentPanel" id="ContentPanel">
-            <ul id="listview" data-role="listview" data-view="icons-medium">
-    @*            <li data-caption="Devices and disks">
-                    <ul>
-                        <li data-icon="images/drive1.png" data-caption="System (C:)"></li>
-                        <li data-icon="images/drive1.png" data-caption="DS1 (D:)"></li>
-                        <li data-icon="images/drive1.png" data-caption="DS2 (E:)"></li>
-                        <li data-icon="images/drive1.png" data-caption="FreeAgent (G:)"></li>
-                        <li data-icon="images/disk-network.png" data-caption="Network"></li>
-                    </ul>
-                </li>
-    *@            
+            <ul id="listview" data-role="listview" data-view="icons-medium">  
             </ul>
         </div>
         <div class="modal fade" id="PopupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body">
-                            <option id="copy">Copy</option>
-                            <option id="cut">Cut</option>
-                            <option id="paste">Paste</option>
-                            <option id="delete">Delete</option>
+@*                    <div class="modal-body">
+                        <option id="copy">@localizer["Copy"]</option>
+                        <option id="cut">@localizer["Cut"]</option>
+                        <option id="paste">@localizer["Paste"]</option>
+                        <option id="delete">@localizer["Delete"]</option>
                     </div>
-                </div>
+*@                </div>
             </div>
         </div>
 

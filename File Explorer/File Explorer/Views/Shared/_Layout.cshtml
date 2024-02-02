@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - File_Explorer</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-@*    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-*@
     <link href="~/css/bundle.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="~/File_Explorer.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/File_Explorer.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -36,6 +34,16 @@
                         </li>
                         
                     </ul>
+                </div>
+                <div class="dropdown">
+                
+                    <label class="form-label">Language</label>
+                    <select  id="ddlLanguage" >
+                        <option value="">Select</option>
+                        <option value="fr-FR">French</option>
+                        <option value="en-US">English</option>
+                    </select>
+
                 </div>
             </div>
         </nav>

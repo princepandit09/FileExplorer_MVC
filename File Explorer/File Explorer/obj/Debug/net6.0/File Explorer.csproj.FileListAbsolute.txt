@@ -30,3 +30,81 @@ D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.pdb
 D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.genruntimeconfig.cache
 D:\Techpro\File Explorer\File Explorer\obj\Debug\net6.0\ref\File Explorer.dll
 D:\Techpro\File Explorer\File Explorer\bin\Debug\net6.0\libman.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\appsettings.Development.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\appsettings.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\bundleconfig.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\libman.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.staticwebassets.runtime.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.exe
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.deps.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.runtimeconfig.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\File Explorer.pdb
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.Mvc.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.Razor.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.Http.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.Helpers.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Web.WebPages.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\System.Text.Json.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\BusinessAccessLayer.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\ModelAccessLayer.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\BusinessAccessLayer.pdb
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\ModelAccessLayer.pdb
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\en-US\BusinessAccessLayer.resources.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\bin\Debug\net6.0\fr-FR\BusinessAccessLayer.resources.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.csproj.AssemblyReference.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.AssemblyInfoInputs.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.AssemblyInfo.cs
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.csproj.CoreCompileInputs.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.MvcApplicationPartsAssemblyInfo.cs
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.MvcApplicationPartsAssemblyInfo.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.RazorAssemblyInfo.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.RazorAssemblyInfo.cs
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.File Explorer.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.build.File Explorer.props
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.File Explorer.props
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.File Explorer.props
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.build.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\staticwebassets.development.json
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\bundle\File Explorer.styles.css
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\scopedcss\projectbundle\File Explorer.bundle.scp.css
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.csproj.CopyComplete
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\refint\File Explorer.dll
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.pdb
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\File Explorer.genruntimeconfig.cache
+D:\Techpro\Git FileExplorer\File Explorer\File Explorer\obj\Debug\net6.0\ref\File Explorer.dll

@@ -8,6 +8,7 @@
         driveListItem += Bind_Li_Data(files)
         driveListItem += '<span class="node-toggle"></span></li>'
 
+       
         $("#treemain").append(driveListItem);
     })
 }
@@ -55,14 +56,15 @@ function BindContentData(response) {
 
             var filename = file.item2.substring(lastIndex + 1, lastIndex + 15);
 
-            mainElement += '<li id="Contentfiles" data-path="' + file.item2 + '" data-icon="images/folder.png" data-caption="' + filename + '" class="node"><label class="checkbox transition-on"><input type="checkbox" data-role="checkbox" data-style="1" data-role-checkbox="true" class=""><span class="check"></span><span class="caption"></span></label><span class="icon"><img src="images/folder.png"></span><div class="data"><div class="caption">' + filename + '</div></div></li>'
+            mainElement += '<li id="Contentfiles" data-path="' + file.item2 + '" data-caption="' + filename + '" class="node"><label class="checkbox transition-on"><input type="checkbox" data-role="checkbox" data-style="1" data-role-checkbox="true" class=""><span class="check"></span><span class="caption"></span></label><span class="icon">'
+            mainElement += '<div class="folder"></div>'
+            mainElement +='</span><div class="data"><div class="caption">' + filename + '</div></div></li>'
 
         })
     })
 
     mainElement += '</ul>'
     mainElement += '</li>'
-
     $("#listview").empty();
     $("#listview").append(mainElement);
 }
@@ -73,7 +75,9 @@ function InitialContentData(response) {
     mainElement += '<li data-caption="Devices and disks" class="node-group expanded" ><div class="data"><div class="caption">Devices and disks</div></div>'
     mainElement += '<ul class="listview view-icons-medium">'
     $.each(response, function (drive, files) {
-        mainElement += '<li id="Contentfiles" data-path="' + drive + '" data-icon="images/drive.png" data-caption="' + drive + '" class="node"><label class="checkbox transition-on"><input type="checkbox" data-role="checkbox" data-style="1" data-role-checkbox="true" class=""><span class="check"></span><span class="caption"></span></label><span class="icon"><img src="images/drive.png"></span><div class="data"><div class="caption">' + drive + '</div></div></li>'
+        mainElement += '<li id="Contentfiles" data-path="' + drive + '" data-caption="' + drive + '" class="node"><label class="checkbox transition-on"><input type="checkbox" data-role="checkbox" data-style="1" data-role-checkbox="true" class=""><span class="check"></span><span class="caption"></span></label><span class="icon">'
+        mainElement += '<div class="drive"></div>'
+        mainElement += '</span><div class="data"><div class="caption">' + drive + '</div></div></li>'
     })
 
     mainElement += '</ul>'
